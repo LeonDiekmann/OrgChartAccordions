@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon } from 'chayns-components';
+import { Icon, Accordion } from 'chayns-components';
 import PictureAccordion from '../pictureAccordion';
 import '../styles.scss';
 
@@ -170,7 +170,7 @@ export default class ExternViewAccordion extends React.Component {
                                         <p
                                             className={'position'}
                                             style={{ fontSize: '12px' }}
-                                        >Business Development
+                                        >Business Development1
                                         </p>
                                     </div>
                                 </td>
@@ -381,7 +381,7 @@ export default class ExternViewAccordion extends React.Component {
                             >
                                 <td>
                                     <div
-                                        className={this.state.show === 9 ? "tab chayns__background-color--0 active" : "tab chayns__background-color--0"}
+                                        className={this.state.show === 9 && this.state.complex === 1 || this.state.complex === 2 || this.state.complex === 3  ? "tab chayns__background-color--0 complexInactive" : this.state.show === 9 ? "tab chayns__background-color--0 active" : "tab chayns__background-color--0"}
                                         onClick={() => {
                                             this.setState({
                                                 open: this.state.open != 4 || this.state.show != 9 ? 4 : 0,
@@ -437,7 +437,7 @@ export default class ExternViewAccordion extends React.Component {
                                         >
                                             <td>
                                                 <div
-                                                    className={this.state.complex === 1 ? "tab chayns__background-color--0 active" : "tab chayns__background-color--0"}
+                                                    className={this.state.complex === 1 || this.state.complex === 0 ?  "tab chayns__background-color--0 active" : "tab chayns__background-color--0 complexInactive"}
                                                     onClick={() => {
                                                         if (this.state.complex != 1)
                                                             this.setState({ complex: 1 })
@@ -460,7 +460,7 @@ export default class ExternViewAccordion extends React.Component {
                                             </td>
                                             <td>
                                                 <div
-                                                    className={this.state.complex === 2 ? 'tab chayns__background-color--0 active' : 'tab chayns__background-color--0'}
+                                                    className={this.state.complex === 2 || this.state.complex === 0  ? 'tab chayns__background-color--0 active' : 'tab chayns__background-color--0 complexInactive'}
                                                     onClick={() => {
                                                         if (this.state.complex != 2)
                                                             this.setState({ complex: 2 })
@@ -483,7 +483,7 @@ export default class ExternViewAccordion extends React.Component {
                                             </td>
                                             <td>
                                                 <div
-                                                    className={this.state.complex === 3 ? 'tab chayns__background-color--0 active' : 'tab chayns__background-color--0'}
+                                                    className={this.state.complex === 3 || this.state.complex === 0 ? 'tab chayns__background-color--0 active' : 'tab chayns__background-color--0 complexInactive'}
                                                     onClick={() => {
                                                         if (this.state.complex != 3)
                                                             this.setState({ complex: 3 })
@@ -504,6 +504,7 @@ export default class ExternViewAccordion extends React.Component {
                                                     </p>
                                                 </div>
                                             </td>
+                                            <td className={this.state.complex === 0 ?  'active' : 'complexInactive'}/>
                                         </div>
                                         <div className="icon__accordion__body chayns__color--100" style={{ width: '390px' }}>
                                             <div className="content_wrapper">

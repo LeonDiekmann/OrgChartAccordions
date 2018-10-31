@@ -40,7 +40,7 @@
     display: flex;
     transition: all .2s ease 0s;
     & .tab:hover {
-        background-color: #161616;
+        background-color: #161616 !important;
     }
     & .tab {
         position: relative;
@@ -95,6 +95,9 @@
 .icon__accordion.dark.open .icon__accordion__head .tab.active {
     background-color: #575757 ;
 }
+.complexInactive {
+    background-color: #323232 ;
+}
 
 // .icon__accordion.open.dark .icon__accordion__body {
 //     background-color: #393939;
@@ -117,7 +120,7 @@ input {
 }
 
 .icon__accordion .icon__accordion__body {
-    width: 520px;
+    width: 480px;
     // transition: max-height 1.2s cubic-bezier(0.5, 0, 1, 0) 0s, background-color 0.7s ease;
     background-color: #575757 ;
     max-height: 0px;
@@ -129,7 +132,7 @@ input {
         width: max-content;
         .icon__accordion__content {
             float: left;
-            max-width: 520px;
+            max-width: 480px;
             max-height: 0px;
             //transition: max-height 1.2s cubic-bezier(0.5, 0, 1, 0) 0s, background-color ease;
             &.show {
@@ -150,7 +153,7 @@ input {
 // }
 
 td {
-    width: 130px;
+    width: 120px;
 }
 
 .socialImage {
